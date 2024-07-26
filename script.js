@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const displayAnswer = document.getElementById('display-answer');
     const buttons = document.querySelectorAll('#button-placement .button');
     const historyContainer = document.getElementById('history');
+    const deleteButton = document.getElementById('delete');
     let isResultDisplayed = false; 
 
     const MAX_LENGTH = 15; // limit characters in the display 
@@ -22,11 +23,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 clearDisplay();
             } else if (value === '=') {
                 calculateResult();
+            } else if (value === 'DEL') {
+                deleteLastCharacter();
             } else {
                 appendToDisplay(value);
             }
         });
     });
+
+    function deleteLastCharacter() {
+        displayAnswer.value = displayAnswer.value.slice(0, -1);
+    }
 
     function clearDisplay() {
         displayHistory.value = '';
