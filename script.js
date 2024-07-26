@@ -32,6 +32,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function deleteLastCharacter() {
+        //if the result is displayed, we can't delete the last character
+        if (isResultDisplayed) {
+            return;
+        }
+
         displayAnswer.value = displayAnswer.value.slice(0, -1);
     }
 
