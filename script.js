@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         } catch (error) {
             displayAnswer.value = 'Error';
+            isResultDisplayed = true;
         }
     }
 });
