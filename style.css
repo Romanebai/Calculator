@@ -15,6 +15,8 @@ html, body {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     border: none;
     font-size: 18px;
+    color: black;
+    text-align: center;
 }
 
 #calculette {
