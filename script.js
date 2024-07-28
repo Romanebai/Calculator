@@ -1,16 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const displayHistory = document.getElementById('display-history');
     const displayAnswer = document.getElementById('display-answer');
     const buttons = document.querySelectorAll('#button-placement .button');
     const historyContainer = document.getElementById('history');
-    const deleteButton = document.getElementById('delete');
     let isResultDisplayed = false; 
 
     const MAX_LENGTH = 15; // limit characters in the display 
     const operators = ['+', '-', '*', '/', '%','.']; // operators list 
 
 
-    if (!displayHistory || !displayAnswer) {
+    if (!historyContainer || !displayAnswer) {
         console.error('Display elements are missing in the DOM');
         return;
     }
@@ -41,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function clearDisplay() {
-        displayHistory.value = '';
+        historyContainer.value = '';
         displayAnswer.value = '';
         isResultDisplayed = false; //Clear the display after a calcul 
     }
